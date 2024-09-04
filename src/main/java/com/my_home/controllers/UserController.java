@@ -4,7 +4,6 @@ import com.my_home.domain.user.RequestUser;
 import com.my_home.domain.user.User;
 import com.my_home.domain.user.UserRepository;
 
-import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 
@@ -39,11 +38,8 @@ public class UserController {
   @SuppressWarnings("rawtypes")
   @PostMapping
   public ResponseEntity registerUser(@RequestBody @Valid RequestUser data) {
-    System.out.println(data);
-
     User newUser = new User(data);
 
-    System.out.println(data);
     repository.save(newUser);
     return ResponseEntity.ok(newUser);
   }
@@ -52,7 +48,6 @@ public class UserController {
   @PutMapping
   @Transactional
   public ResponseEntity updateUser(@RequestBody @Valid RequestUser data) {
-    System.out.println(data);
     Optional<User> optionalUser = repository.findById((data.id()));
     if (optionalUser.isPresent()) {
       User user = optionalUser.get();
