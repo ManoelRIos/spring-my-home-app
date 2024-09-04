@@ -32,7 +32,7 @@ public class UserController {
   @SuppressWarnings("rawtypes")
   @GetMapping
   public ResponseEntity getAllUsers() {
-    var allUsers = repository.findAll();
+    var allUsers = repository.findAllByActiveTrue();
     return ResponseEntity.ok(allUsers);
   }
 
