@@ -29,9 +29,18 @@ public class User {
 
   private String password;
 
+  private String firstName;
+
+  private String lastName;
+
+  private Integer active;
+
   public User(RequestUser requestUser) {
     this.username = requestUser.username();
     this.password = requestUser.password();
+    this.firstName = requestUser.firstName();
+    this.lastName = requestUser.lastName();
+    this.active = 1;
   }
 
 }

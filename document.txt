@@ -1,0 +1,29 @@
+> Banco de dados
+  
+  - Tables
+
+    . User
+      + id
+      + firstName
+      + lastName
+      + userName      
+      + 
+    ____________________
+
+    . Card
+      + id
+
+    ____________________
+
+    . Finance
+
+    ____________________
+
+    . Finance Category
+    
+    ____________________
+
+    . Point
+
+    ____________________    
+      
