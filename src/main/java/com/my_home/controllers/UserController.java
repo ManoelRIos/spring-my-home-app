@@ -4,6 +4,7 @@ import com.my_home.domain.user.RequestUser;
 import com.my_home.domain.user.User;
 import com.my_home.domain.user.UserRepository;
 
+import jakarta.persistence.EntityNotFoundException;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 
@@ -57,7 +58,7 @@ public class UserController {
       user.setLastName(data.lastName());
       return ResponseEntity.ok(user);
     } else {
-      return ResponseEntity.notFound().build();
+      throw new EntityNotFoundException();
     }
   }
 
@@ -73,7 +74,7 @@ public class UserController {
       user.setActive(0);
       return ResponseEntity.noContent().build();
     } else {
-      return ResponseEntity.notFound().build();
+      throw new EntityNotFoundException();
     }
   }
 
